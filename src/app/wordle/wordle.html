@@ -1,0 +1,26 @@
+<section class="py-20 flex flex-col gap-10 text-center" (click)="input.focus()">
+  <h1 class="text-2xl">TERMO (Wordle)</h1>
+  <input
+    #input
+    type="text"
+    class="absolute opacity-0 pointer-events-none"
+    (keydown)="onKeyDown($event)"
+  />
+
+  <div class="w-full max-w-md mx-auto flex flex-col gap-2">
+    @for (row of wordleGrid; track $index) {
+      <div class="flex gap-2 w-full justify-center">
+        @for (col of row; track $index) {
+          <span
+            [ngClass]="col.status"
+            class="border aspect-square w-20 h-20 flex items-center justify-center font-bold text-2xl letter"
+          >
+            {{ col.value }}
+          </span>
+        }
+      </div>
+    }
+  </div>
+
+  <p [ngClass]="message().type" class="">{{ message().text }}</p>
+</section>

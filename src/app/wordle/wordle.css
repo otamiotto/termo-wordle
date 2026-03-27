@@ -1,0 +1,22 @@
+.letter.wrong {
+  background-color: brown;
+  color: white;
+}
+
+.letter.present {
+  background-color: yellow;
+  color: black;
+}
+
+.letter.correct {
+  background-color: green;
+  color: white;
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  color: green;
+}
